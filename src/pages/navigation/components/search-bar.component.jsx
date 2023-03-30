@@ -1,10 +1,8 @@
-import React from "react";
+import React from 'react'
 
-const Header = () => {
+const SearchBar = () => {
   return (
-    <header>
-      <h3>MovieSearch</h3>
-      <form>
+    <form>
         <select name="" id="">
           <option value="all">All</option>
           <option value="movies">Movies</option>
@@ -14,8 +12,7 @@ const Header = () => {
         <input type="search" name="" id="" />
         <button>search</button>
       </form>
-    </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default SearchBar
