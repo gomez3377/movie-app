@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 
 import { filters } from '../js/filters'
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import FilmSelector from './filter-selector.component'
 import SearchInput from './search-input.component'
@@ -15,7 +15,7 @@ const defaultFormData ={
 const FilmFilterBar = () => {
 const {setQuery} = useContext(MovieContext)
   const [formData, setFormData] = useState(defaultFormData)
-const history = useHistory()
+const navigate = useNavigate()
 
 
   const handleChange = (event) => {
@@ -29,10 +29,7 @@ const history = useHistory()
  const handleSumbit = (event) => {
    event.preventDefault()
   setQuery(formData.searchInput)
-  history.push({
-    pathname: "/results",
-    state: { searchResults: movieData },
-  });
+  navigate("/results");
  resetFormData()
 
  }
